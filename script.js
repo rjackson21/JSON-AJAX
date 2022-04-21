@@ -11,6 +11,9 @@ btn.addEventListener("click" , function(){
     }
     ourRequest.send()
     clickCounter++
+    if (clickCounter > 3) {
+        btn.classList.add("hide-me")
+    }
 })
 
 function renderHTML(data){
