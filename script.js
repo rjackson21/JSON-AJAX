@@ -1,14 +1,16 @@
+var clickCounter = 1 
 const btn = document.getElementById("btn")
 const animalContainer = document.getElementById("animal-info")
 
 btn.addEventListener("click" , function(){
     var ourRequest = new XMLHttpRequest();
-    ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json')
+    ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-' + clickCounter + '.json')
     ourRequest.onload = function() {
         var ourData = JSON.parse(ourRequest.responseText)
         renderHTML(ourData)
     }
     ourRequest.send()
+    clickCounter++
 })
 
 function renderHTML(data){
